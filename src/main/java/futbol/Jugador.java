@@ -13,7 +13,7 @@ public class Jugador extends Futbolista {
     public Jugador() {
         super();
         this.golesMarcados = 289;
-        this.dorsal= 7;
+        this.dorsal = 7;
     }
 
 
@@ -24,16 +24,14 @@ public class Jugador extends Futbolista {
     public int compareTo(Futbolista o) {
         if (this.getEdad() > o.getEdad()) {
 
-            return this.getEdad()-o.getEdad();
-        }
-
-        else {
-            return o.getEdad()-this.getEdad();
+            return this.getEdad() - o.getEdad();
+        } else {
+            return o.getEdad() - this.getEdad();
         }
     }
 
 
     public String toString() {
-        return "El futbolista "+this.getNombre()+" tiene "+this.getEdad()+",y juega de "+this.getPosicion()+" con el dorsal "+this.dorsal+". Ha marcado "+ this.golesMarcados;
+        return "El futbolista " + this.getNombre() + " tiene " + this.getEdad() + ", y juega de " + this.getPosicion() + " con el dorsal " + this.dorsal + ". Ha marcado " + this.golesMarcados;
     }
 }
