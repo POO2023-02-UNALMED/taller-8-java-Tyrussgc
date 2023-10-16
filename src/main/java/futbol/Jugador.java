@@ -22,10 +22,17 @@ public class Jugador extends Futbolista {
     }
 
     public int compareTo(Futbolista o) {
-        Jugador f = (Jugador) o;
-        int diferencia = Math.abs(f.getEdad()-this.getEdad());
-        return diferencia;
+        if (this.getEdad() > o.getEdad()) {
+
+            return this.getEdad()-o.getEdad();
+        }
+
+        else {
+            return o.getEdad()-this.getEdad();
+        }
     }
+
+
     public String toString() {
         return "El futbolista "+this.getNombre()+" tiene "+this.getEdad()+",y juega de "+this.getPosicion()+" con el dorsal "+this.dorsal+". Ha marcado "+ this.golesMarcados;
     }

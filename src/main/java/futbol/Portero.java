@@ -4,12 +4,12 @@ import java.security.KeyStore;
 
 public class Portero extends Futbolista {
     public short golesRecibidos;
-    public byte dorsa;
+    public byte dorsal;
 
-    public Portero(String nombre, int edad, short golesRecibidos, byte dorsa) {
+    public Portero(String nombre, int edad, short golesRecibidos, byte dorsal) {
         super(nombre, edad, "Portero");
         this.golesRecibidos = golesRecibidos;
-        this.dorsa = dorsa;
+        this.dorsal = dorsal;
     }
 
     public short getGolesRecibidos() {
@@ -20,15 +20,26 @@ public class Portero extends Futbolista {
         return "El futbolista "+this.getNombre()+" tiene "+this.getEdad()+",y juega de "+this.getPosicion()+" con el dorsal "+this.dorsal+". La han marcado "+ this.golesRecibidos;
     }
 
-    public Portero(short golesRecibidos, byte dorsa) {
+    public Portero(short golesRecibidos, byte dorsal) {
         this.golesRecibidos = golesRecibidos;
-        this.dorsa = dorsa;
+        this.dorsal = dorsal;
+    }
+
+    public void setGolesRecibidos(short golesRecibidos) {
+        this.golesRecibidos = golesRecibidos;
+    }
+
+    public byte getDorsal() {
+        return dorsal;
+    }
+
+    public void setDorsal(byte dorsal) {
+        this.dorsal = dorsal;
     }
 
     public boolean jugarConLasManos() {
         return true;
     }
-    @Override
     public int compareTo(Futbolista o) {
         Portero f = (Portero) o;
         return Math.abs(f.getGolesRecibidos()-this.getGolesRecibidos());
